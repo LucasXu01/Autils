@@ -19,6 +19,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!--js/java互调-->
+        <activity android:name=".JsJavaActivity"/>
+
+        <activity android:name=".testActivity"/>
+
+        
     </application>
+
+
+    <uses-permission android:name="android.permission.INTERNET"/>
 
 </manifest>

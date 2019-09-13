@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" charset="GB2312"/>
+
+        <script type="text/javascript">
+            function javacalljs(){
+                 document.getElementById("showmsg").innerHTML = "JAVA调用了JS的无参函数";
+            }
+
+            function javacalljswith(arg){
+                 document.getElementById("showmsg").innerHTML = (arg);
+            }
+
+        </script>
+
+    </head>
+
+    <body>
+        <h3 align="center">Web模块</h3>
+
+        <h3 id="showmsg" align="center">调用js显示结果</h3>
+
+        <div style="text-align:center; vertical-align:middle;">
+            <input  type="button" value="Js调用Java代码" onclick="window.android.jsCallAndroid()"/>
+        </div>
+
+        <br>
+
+        <br>
+
+        <div style="text-align:center; vertical-align:middle;">
+        <input  type="button" value="Js调用Java代码并传参数" onclick="window.android.jsCallAndroidArgs('Js传过来的参数')"/>
+        </div>
+
+    </body>
+</html>

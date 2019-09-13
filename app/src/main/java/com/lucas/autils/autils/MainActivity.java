@@ -1,8 +1,10 @@
 package com.lucas.autils.autils;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,9 +14,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    public String name = "lucas";
+    public int age = 20;
+    databean databean;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +47,29 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        findViewById(R.id.button_jsjava).setOnClickListener(v->{startActivity(new Intent(MainActivity.this,JsJavaActivity.class));});
+        Button button_test = (Button)findViewById(R.id.button_ceshi);
+        button_test.setOnClickListener(v->{
+            Intent intent = new Intent(MainActivity.this,testActivity.class);
+            intent.putExtra("name",name);
+            intent.putExtra("age",age);
+            databean = new databean("xuxu",1);
+            intent.putExtra("ceshi",databean);
+            startActivity(intent);
+        });
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.e("xuxu", "onResume: " +name + age);
+        if(databean!=null){
+            Log.e("xuxu", "onResume: " +  databean.getName()+databean.getAge());
+        }
+
     }
 
     @Override
@@ -63,7 +93,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+        // as you specify a parent activity_jsjava in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
