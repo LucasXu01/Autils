@@ -16,6 +16,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
+import com.lucas.autils.autils.leaktset.LeakActivity;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -59,6 +61,21 @@ public class MainActivity extends AppCompatActivity
             intent.putExtra("ceshi",databean);
             startActivity(intent);
         });
+        Button button_greendao = (Button)findViewById(R.id.greendao);
+        button_greendao.setOnClickListener(v->{
+            Intent intent = new Intent(MainActivity.this, GreenDaoActivity.class);
+            startActivity(intent);
+        });
+        Button download = (Button)findViewById(R.id.download);
+        download.setOnClickListener(v->{
+            Intent intent = new Intent(MainActivity.this, DownloadActivity.class);
+            startActivity(intent);
+        });
+        findViewById(R.id.bt_leak).setOnClickListener(v->{
+            Intent intent = new Intent(MainActivity.this, LeakActivity.class);
+            startActivity(intent);
+        });
+
     }
 
 

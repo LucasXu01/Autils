@@ -3,6 +3,7 @@
     package="com.lucas.autils.autils">
 
     <application
+        android:name=".MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -22,8 +23,14 @@
 
         <!--js/java互调-->
         <activity android:name=".JsJavaActivity"/>
-
+        <!--intent深浅拷贝测试-->
         <activity android:name=".testActivity"/>
+        <!--GreenDao测试-->
+        <activity android:name=".GreenDaoActivity"/>
+        <!--下载实践-->
+        <activity android:name=".DownloadActivity"/>
+        <!--LeakCanary内存泄露测试-->
+        <activity android:name=".leaktset.LeakActivity"/>
 
         
     </application>
